@@ -4,6 +4,7 @@
 */
 #include <algorithm>
 #include <iostream>
+#include <queue>
 
 using namespace std;
 
@@ -46,6 +47,13 @@ void printHeap() {
     cout << endl;
 }
 
+//仿函数比较函数
+struct cmp{
+    bool operator()(int a,int b){
+        return a<b;
+    }
+};
+
 int main() {
     n = 10;
     // begin at i = 1
@@ -54,6 +62,14 @@ int main() {
     for (int i = 1; i <= n; i++) {
         h[i] = rand() % 100;
     }
+    priority_queue<int,vector<int>,cmp> q;
+    for (int i = 1;i<=n;i++) q.push(h[i]);
+    while (!q.empty()) {
+        cout<<q.top()<<" ";
+        q.pop();
+    }
+    cout<<endl;
+
     build();
     printHeap();
     //堆排序
