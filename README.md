@@ -33,3 +33,9 @@
 大根堆：父节点堆键值大于等于子节点，cpp默认的priority_queue就是一个大根堆。
 
 二叉堆的实现利用数组模拟，h[i]的子节点为h[2i]和h[2i+1]
+
+### [ST表](./data_structure/STTable.cpp)
+用于解决Range Maximum/Minimum Query,RMQ 区间查询最值问题
+预处理时间复杂度O(n long n)，查询时间复杂度O(1)。
+但是ST表不支持区间修改。
+
