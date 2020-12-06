@@ -21,17 +21,18 @@ int main() {
     }
     log[1] = 0;
     log[2] = 1;
-    for (int i = 3;i<=n;i++) log[i] = log[i/2]+1;
+    for (int i = 3; i <= n; i++)
+        log[i] = log[i / 2] + 1;
     for (int j = 1; j <= log[n]; j++) {
         for (int i = 0; i + (1 << j) - 1 <= n; i++) {
             f[i][j] = max(f[i][j - 1], f[i + (1 << (j - 1))][j - 1]);
-            //cout<<i<<" "<<j<<" "<<f[i][j]<<endl;
+            // cout<<i<<" "<<j<<" "<<f[i][j]<<endl;
         }
     }
     int l, r;
     while (cin >> l >> r) {
-        int len = r- l +1;
-        int res = max(f[l][log[len]], f[r - (1<<log[len]) + 1][log[len]]);
+        int len = r - l + 1;
+        int res = max(f[l][log[len]], f[r - (1 << log[len]) + 1][log[len]]);
         cout << res << endl;
     }
     return 0;
