@@ -36,7 +36,9 @@
 
 ### [ST表](./data_structure/STTable.cpp)
 用于解决Range Maximum/Minimum Query,RMQ 区间查询最值问题
+
 预处理时间复杂度O(n long n)，查询时间复杂度O(1)。
+
 但是ST表不支持区间修改。
 
 ### [树状数组](./data_structure/BinaryIndexTree.cpp)
@@ -49,3 +51,7 @@
 和ST表相比：可以支持修改。
 
 和线段树相比：树状数组可以做的线段树都可以做，但是树状数组代码简洁清晰一些，如果解决一些单点修改问题，树状数组较为简单。
+
+### [线段树](./data_structure/SegmentTree.cpp)
+线段树可以在O(log n)的时间复杂度实现单点修改，区间修改，区间查询最大值、最小值、区间求和。
+
